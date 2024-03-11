@@ -4,6 +4,5 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.tslint": "explicit",
     "source.fixAll.stylelint": "explicit"
-  },
-  "compile-hero.disable-compile-files-on-did-save-code": false
+  }
 }
