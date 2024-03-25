@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
@@ -36,7 +37,7 @@ export default function NavBar() {
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
           >
-            <MenuIcon />
+            {open ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
           <Menu
             id="basic-menu"
@@ -46,18 +47,14 @@ export default function NavBar() {
             MenuListProps={{
               'aria-labelledby': 'basic-button'
             }}
-            anchorOrigin={{
-              vertical: 'center',
-              horizontal: 'center'
-            }}
-            transformOrigin={{
-              vertical: 'center',
-              horizontal: 'center'
-            }}
-            sx={{
-              '& .MuiPaper-root': {
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                width: '300px'
+            slotProps={{
+              paper: {
+                style: {
+                  color: 'red',
+                  fontSize: '18px',
+                  width: '80%',
+                  margin: 'auto'
+                }
               }
             }}
           >
