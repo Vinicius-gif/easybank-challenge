@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 
 import logoSVG from '../../assets/images/logo.svg';
+import ButtonInvite from '../UI/buttonInvite';
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -23,7 +24,7 @@ export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="inherit" className="fixed">
-        <Toolbar className="flex justify-between">
+        <Toolbar className="flex justify-between lg:justify-around">
           <img src={logoSVG} alt="Logo" />
           <IconButton
             id="basic-button"
@@ -36,24 +37,27 @@ export default function NavBar() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            className="lg:hidden"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
+          <ButtonInvite title="Request Invite" hideOnLg />
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
+            sx={{ mt: '40px', marginLeft: '-5%' }}
             MenuListProps={{
               'aria-labelledby': 'basic-button'
             }}
             slotProps={{
               paper: {
                 style: {
-                  color: 'red',
-                  fontSize: '18px',
                   width: '80%',
-                  margin: 'auto'
+                  fontWeight: 'bold',
+                  color: 'black',
+                  fontSize: '20px'
                 }
               }
             }}
