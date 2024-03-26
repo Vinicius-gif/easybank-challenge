@@ -10,6 +10,7 @@ import Toolbar from '@mui/material/Toolbar';
 
 import logoSVG from '../../assets/images/logo.svg';
 import ButtonInvite from '../UI/buttonInvite';
+import LinksMenuDesktop from './linksMenuDesktop';
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -41,6 +42,7 @@ export default function NavBar() {
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
+          <LinksMenuDesktop />
           <ButtonInvite title="Request Invite" hideOnLg />
           <Menu
             id="basic-menu"
