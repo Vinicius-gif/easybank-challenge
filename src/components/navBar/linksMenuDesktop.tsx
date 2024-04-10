@@ -1,17 +1,23 @@
-import React from 'react';
-
 const LinksMenuDesktop = () => {
-  const pages = ['Home', 'About', 'Contact', 'Blog', 'Careers'];
+  const pages = [
+    { title: 'Home', link: '/' },
+    { title: 'About', link: '/' },
+    { title: 'Contact', link: '/' },
+    { title: 'Blog', link: '/' },
+    { title: 'Careers', link: '/' }
+  ];
 
   return (
-    <ul className="flex gap-4 self-stretch items-center">
+    <div className="flex gap-4 self-stretch items-center">
       {pages.map((page) => (
-        <li key={page} className="relative cursor-pointer">
-          {page}
-          <div className="absolute left-0 bottom-0 w-full h-0 bg-lime-green hover:h-2 transition-all duration-300"></div>
-        </li>
+        <button
+          key={page.title}
+          className="relative cursor-pointer self-stretch hover:border-b-4 border-lime-green"
+        >
+          <a href={page.link}>{page.title}</a>
+        </button>
       ))}
-    </ul>
+    </div>
   );
 };
 
